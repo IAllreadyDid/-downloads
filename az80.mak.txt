@@ -1,0 +1,18 @@
+ 
+SRCS =  az80.c az80eval.c az80util.c
+
+OBJS =  az80.o az80eval.o az80util.o
+
+CFLAGS =  -O
+
+CC = /usr/bin/gcc
+
+az80: $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $(SRCS)
+
+$(OBJS):
+	$(CC) $(CFLAGS) -c $*.c 
+
+clean:
+	/bin/rm -f *.o
+
